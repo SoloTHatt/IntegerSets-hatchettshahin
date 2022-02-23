@@ -23,6 +23,8 @@ public static void main(String[] args) {
 		
 	    keyboard = new Scanner (System.in);
 		typed= keyboard.next();
+		set= new ArrayList();
+
 		
 		if(typed.equals("new"))
 		{
@@ -32,10 +34,14 @@ public static void main(String[] args) {
 		{
 			showSet();
 		}
+		else if(typed.equals("select"))
+		{
+			setSelect(set);
+		}
 		
 	}
 	
-	private static void newSet()
+	private static ArrayList newSet()
 	{
 		Scanner scan;
 		
@@ -59,6 +65,8 @@ public static void main(String[] args) {
 		
 		System.out.println("Processing Done ");
 		menu();
+
+		return (set);
 	}
 	
 	
@@ -70,6 +78,33 @@ public static void main(String[] args) {
 		menu();
 	}
 	
+	private static void setSelect(ArrayList<ArrayList> set)
+	{
+		
+		System.out.println("Please select a set (" + set.get(0)+","+set.get(set.size())+")");
+
+		keyboard = new Scanner (System.in);
+		typed= keyboard.next();
+
+		System.out.println("Set"+typed+"is now the current set:"+set1);
+		menu();
+
+	}
+
+	private static void setDelete(ArrayList<ArrayList> currentSet)
+	{
+		System.out.println("Set "+currentSet+"Has been deleted. Remaining sets have been relabled. The current set is:");
+
+		//cannot relabel sets just yet. we need to initilize a collection, then move sets around. 
+
+		set.remove(currentSet);
+
+		menu();
+
+	}
+
+
+
 	
 	
 	
