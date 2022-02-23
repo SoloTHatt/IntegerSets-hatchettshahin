@@ -86,7 +86,7 @@ public static void main(String[] args) {
 		keyboard = new Scanner (System.in);
 		typed= keyboard.next();
 
-		System.out.println("Set"+typed+"is now the current set:"+set1);
+		System.out.println("Set"+typed+"is now the current set:"+set);
 		menu();
 
 	}
